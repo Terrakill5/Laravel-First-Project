@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(), //Sirve para hacer una oracion de prueba
+            'slug' => $this->faker->slug(),
             'content' => $this->faker->text(1000), //Hacer un texto de 1000 caracteres
             'category' => $this->faker->word(),
             'published_at' => $this->faker->dateTime(),

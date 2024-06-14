@@ -9,6 +9,14 @@ class post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'content',
+        'category',
+        'published_at'
+    ];
+
     /*
     --Si la tabla en la BD tiene la primera letra minuscula y termina en s, no hace falta esto siguiente
     protected $table = 'posts'; */
@@ -31,5 +39,10 @@ class post extends Model
                 return ucfirst($value);
             }
         );
+    }
+
+    public function getRouteKeyName() //Funcion que ocurre para que las instancias usen este atributo en los CRUD
+    {
+        return 'slug'; //esta cadena indica el nombre del atributo que se buscara de la instancia
     }
 }

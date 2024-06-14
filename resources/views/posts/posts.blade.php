@@ -19,11 +19,11 @@
         {{ $post->content }}
     </p>
 
-    <a href="{{route('posts.edit', $post->id)}}">
+    <a href="{{route('posts.edit', $post)}}">
         Editar post
     </a>
 
-    <form action="{{route('posts.destroy',$post->id)}}" method="POST">
+    <form action="{{route('posts.destroy',$post)}}" method="POST">
         @csrf
         @method('DELETE');
         <button type="submit">Eliminar Post</button>
